@@ -1,0 +1,32 @@
+<h2>Product List</h2>
+<table class="table table-striped">
+    <thead>
+        <th>Customer Id</th>
+        <th>Customer Name</th>
+        <th>Phone Number</th>
+        <th>Add Numbers</th>
+        <th>Delete Customer</th>
+        
+    </thead>
+
+    <tbody>
+        <tr *ngFor  = "let customer of customers">
+            <td>{{customer.cid}}</td>
+            <td>{{customer.name}}</td>
+            <div *ngFor  = "let phone of phonenumbers">
+               <td *ngIf="phone.customer.cid == customer.cid">Number : {{phone.number}}<br> Type : {{phone.type}}</td>
+                <td *ngIf="phone.customer.cid == customer.cid"> <button (click) = "deleteNumber(customer.cid,phone.phoneId)" class="btn btn-info">Delete</button></td>
+            </div>
+           
+            <td>
+                <button (click) = "addNumber(customer.cid)" class="btn btn-info">Add</button>
+            </td> 
+
+            <td>
+                <button (click) = "deleteCustomer(customer.cid)" class="btn btn-info">Delete</button>
+            </td> 
+            
+        </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,28 @@
+<div class="col-md-6 offset-md-3">
+    <h2>Add Phone Number</h2>
+    <form (ngSubmit) = "onSubmit()">
+
+        <div class="form-group">
+            <label>Customer Id</label>
+                <input type="text" class="form-control" id = "id" [(ngModel)]= "customer.cid" name = "id">
+        </div>
+    
+        <div class="form-group">
+            <label>Customer Name</label>
+            <input type="text" class="form-control" id = "name" [(ngModel)]= "customer.name" name = "name">
+        </div>
+
+        <div class="form-group">
+                <label>phone Number</label>
+                <input type="text" class="form-control" id="number"
+                [(ngModel)]="phone.number" name = "number">
+
+                <label>Type</label>
+                <input type="text" class="form-control" id="type"
+                [(ngModel)]="phone.type" name = "type">
+                
+        </div>
+
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>
